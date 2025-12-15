@@ -10,7 +10,7 @@ typedef struct linked_list {
 } linked_list_t;
 
 
-node_t create_node(int value);
+node_t* create_node(int value);
 void add_node_to_start_of_list(linked_list_t* list, node_t* node);
 void add_node_to_end_of_list(linked_list_t* list, node_t* node);
 void insert_node_to_a_position(linked_list_t* list, node_t* node, int position);
