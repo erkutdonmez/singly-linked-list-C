@@ -1,8 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 #include "linked_list.h"
 
 int main(void) {
-    linked_list_t linked_list = {.head = NULL};
+    linked_list_t* linked_list = malloc(sizeof(*linked_list));
+    linked_list->head = NULL;
 
     node_t* node0 = create_node(333);
     node_t* node1 = create_node(5);
@@ -15,32 +18,32 @@ int main(void) {
     node_t* node8 = create_node(12);
 
 
-    reverse_list(&linked_list);
+    reverse_list(linked_list);
 
-    add_node_to_start_of_list(&linked_list, node0);
+    add_node_to_start_of_list(linked_list, node0);
 
-    reverse_list(&linked_list);
+    reverse_list(linked_list);
 
-    remove_tail_node(&linked_list);
-    add_node_to_end_of_list(&linked_list, node1);
-    add_node_to_end_of_list(&linked_list, node2);
-    add_node_to_end_of_list(&linked_list, node3);
-    reverse_list(&linked_list);
-    add_node_to_end_of_list(&linked_list, node4);
+    remove_tail_node(linked_list);
+    add_node_to_end_of_list(linked_list, node1);
+    add_node_to_end_of_list(linked_list, node2);
+    add_node_to_end_of_list(linked_list, node3);
+    reverse_list(linked_list);
+    add_node_to_end_of_list(linked_list, node4);
 
-    print_out_list(&linked_list);
+    print_out_list(linked_list);
 
-    remove_node_from_a_position(&linked_list, 2);
+    remove_node_from_a_position(linked_list, 2);
 
 
-    remove_head_node(&linked_list);
-    add_node_to_start_of_list(&linked_list, node5);
+    remove_head_node(linked_list);
+    add_node_to_start_of_list(linked_list, node5);
 
-    insert_node_to_a_position(&linked_list, node6, 0);
-    insert_node_to_a_position(&linked_list, node7, 123);
-    insert_node_to_a_position(&linked_list, node8, 8);
+    insert_node_to_a_position(linked_list, node6, 0);
+    insert_node_to_a_position(linked_list, node7, 123);
+    insert_node_to_a_position(linked_list, node8, 8);
 
-    reverse_list(&linked_list);
+    reverse_list(linked_list);
 
     printf("Yuppi birinci sınıfa geri döndüm");
 
